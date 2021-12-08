@@ -3,7 +3,7 @@ from lifestore_file import lifestore_products, lifestore_sales, lifestore_search
 
 Saludo = """ 
 
-Bienvenida a Life Store
+Bienvenida/o a Life Store
 
 Por favor, ingresa tu ID de identificación así como tu contraseña para acceder a la información relacionada a ventas, stock, etc. 
 
@@ -14,21 +14,24 @@ print (Saludo)
 # Con este primer código, el usuario puede acceder al ingreso de sesión.
 
 if __name__ == "__main__":
-    
-    USUARIO = "Manager" 
-    CONTRASEÑA = "LIFESTORE"
+    USUARIO = 'Manager'
+    CONTRASENA = 'lifeStore'
 
-    username = input('Coloca tu nombre de usuario:\n > ')
+INTENTOS = 3
+
+while True:
+    if INTENTOS == 0:
+           exit()
+    username = input('Ingresa tu palabra ID:\n > ')
     password = input('Ingresa tu contraseña:\n > ')
-
     if username == USUARIO:
-        print("¡Bienvenida/o, Manager!")
-        if password == CONTRASEÑA:
-                print("Ingrese contraseña")
-        else:
-                print("Contraseña incorrecta")
-    else: 
-        print("El usuario no es correcto, verifique")
+        if password == CONTRASENA:
+            break 
+    else:
+        INTENTOS = INTENTOS - 1
+
+        print(f'\n!! Usuario/Contraseña incorrecto(s), {INTENTOS} restantes !!\n')
+
 
 #Primer consigna: Productos más vendidos y productos rezagados
 # Primer punto de la consigna: Este código es para calcular el TOP 5 de los productos más vendidos, así como el TOP 10 con mayores búsquedas
@@ -867,3 +870,10 @@ print("Los meses con mayor cantidad de ventas: Abril, Marzo y Enero")
 
 
 print("Fin del informe")
+
+
+
+  
+
+
+
